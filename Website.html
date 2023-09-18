@@ -1,34 +1,62 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HTML CSS Review</title>
+    <title>reduce_methode</title>
     <style>
-      .red-button{
-        background-color: red;
-        color: white;
-      }
-    
-      .yellow-button{
-        background-color: yellow;
-      }
     </style>
   </head>
   <body>
-    <button title="goodjob" class="red-button" onclick=" alert('Good job')">
-      hello
-    </button>
-    
-    <p>
-      prargraph of<button class="yellow-button">hello</button> text
-    </p>
-    
     <script>
-      //this is comment
-      //this code creates a popup.
-      //alert('hello')
+      const characters = [
+    {
+        name: 'Luke Skywalker',
+        height: 172,
+        mass: 77,
+        eye_color: 'blue',
+        gender: 'male',
+    },
+    {
+        name: 'Darth Vader',
+        height: 202,
+        mass: 136,
+        eye_color: 'yellow',
+        gender: 'male',
+    },
+    {
+        name: 'Leia Organa',
+        height: 150,
+        mass: 49,
+        eye_color: 'brown',
+        gender: 'female',
+    },
+    {
+        name: 'Anakin Skywalker',
+        height: 188,
+        mass: 84,
+        eye_color: 'blue',
+        gender: 'male',
+    },
+];
+    const totalhight = characters.reduce((acc, cur) =>{
+      return acc += cur.height;
+    },0);
+    console.log(totalhight);
+    const totalmess = characters.reduce((acc, cur) => {
+      return acc += cur.mass;
+    },0);
 
-      console.log(2+2);
-      console.log('some'+'text')
+    const gruped_by = characters.reduce( (g, item) => {
+      if(g[item.gender] == 'male'){
+        g[item.gender].push(item);
+      }else{
+        g[item.gender] = {};
+      }
+      
+      return g
+    }
+    ,{});
+    
+    console.log(gender);
     </script>
   </body>
 </html>
